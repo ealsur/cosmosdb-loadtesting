@@ -1,0 +1,41 @@
+﻿@model string
+@{ 
+    string baseHost = $"{Context.Request.Scheme}://{Context.Request.Host}";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure Cosmos DB - Load Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Load Testing application for Azure Cosmos DB</h1>
+        <p>
+            This application dynamically parses the content of the included <mark>testitem.json</mark> file which you can customize with a sample document of your liking.
+        </p>
+        <p>
+            It provides two API endpoints to load test simple operations:
+            <ul>
+                <li><code>@(baseHost)/load/read</code>: Used to test <mark>Reads</mark></li>
+                <li><code>@(baseHost)/load/write</code>: Used to test <mark>Writes</mark></li>
+            </ul>
+        </p>
+        <blockquote>
+            <p>By default this application will connect and run the tests on the account's <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/distribute-data-globally" target="_blank">Write region</a>.</p>
+        </blockquote>
+        <p>
+            You can deploy this application to <a href="https://azure.microsoft.com/en-us/services/app-service/" target="_blank">Azure App Service</a> and use <a href="https://docs.microsoft.com/en-us/vsts/load-test/app-service-web-app-performance-test" target="_blank">Azure Application Insights</a> to create Load Tests targetting any of these endpoints to verify that your current RU/s configuration can handle a certain amount of concurrent users.
+        </p>
+        <blockquote>
+            <p>It is recommended that the deployed App Service is <u>in the same region</u> as your Azure Cosmos DB instance to avoid any networking delays.</p>
+        </blockquote>
+        <h2>Detected sample document</h2>
+        <p>As parsed from the <mark>testitem.json</mark>, edit it to suit your payload needs.</p>
+        <p>
+            <code>@Model</code>
+        </p>
+    </div>
+</body>
+</html>
