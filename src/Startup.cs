@@ -1,7 +1,5 @@
 ﻿namespace loadtesting
 {
-    using System;
-    using loadtesting.Models;
     using loadtesting.Services;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;

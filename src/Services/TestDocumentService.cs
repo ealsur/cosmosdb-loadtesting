@@ -1,14 +1,21 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
-using Newtonsoft.Json.Linq;
-
-namespace loadtesting.Services
+﻿namespace loadtesting.Services
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Reflection;
+    using System.Text;
+    using Newtonsoft.Json.Linq;
+
+    /// <summary>
+    /// Service to map a dynamic document and provide an instance to load test
+    /// </summary>
     public class TestDocumentService : ITestDocumentService
     {
         private readonly JObject _baseObject;
+
+        /// <summary>
+        /// Creates a service and tries to parse a sample document
+        /// </summary>
         public TestDocumentService()
         {
             var assembly = Assembly.GetEntryAssembly();
@@ -36,6 +43,10 @@ namespace loadtesting.Services
             }
         }
 
+        /// <summary>
+        /// Returns the parsed sample document
+        /// </summary>
+        /// <returns>Parsed <see cref="JObject"/> document</returns>
         public JObject GetDocument()
         {
             return this._baseObject;
