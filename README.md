@@ -27,3 +27,7 @@ Before deploying this app, edit the [appsettings.json](./src/appsettings.json) f
     "ApplicationInsights": {
         "InstrumentationKey": "appinsights-key"
     }
+
+## Setting up the tests
+
+Refer to [this article](https://medium.com/@Ealsur/load-testing-azure-cosmos-db-with-asp-net-core-6b4514980d1b) for a full coverage on how to create tests in Azure App Service.
