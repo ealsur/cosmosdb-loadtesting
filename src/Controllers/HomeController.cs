@@ -13,7 +13,6 @@
 
         public ActionResult Index()
         {
-
             return View("Index", _testDocumentService.GetDocument().ToString(Newtonsoft.Json.Formatting.Indented));
         }
     }

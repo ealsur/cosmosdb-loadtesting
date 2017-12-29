@@ -13,7 +13,6 @@
         {
             this._documentDbService = documentDbService;
             this._testDocumentService = testDocumentService;
-
         }
 
         [ActionName("Write")]
