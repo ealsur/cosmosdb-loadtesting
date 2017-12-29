@@ -16,7 +16,7 @@
 
         }
 
-        [ActionName("Create")]
+        [ActionName("Write")]
         public async Task<ActionResult> CreateAsync()
         {
             await this._documentDbService.AddItemAsync(this._testDocumentService.GetDocument());
