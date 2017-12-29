@@ -4,6 +4,11 @@ This repo contains an ASP.NET Core web application that can be used to load test
 
 It exposes two API endpoints, one for Reads and one for Writes, where a Load Test framework or service can be used. Once the app runs, it will provide a visual aid for the endpoints based on the current host.
 
+* An endpoint to test **Reads** of a single document.
+* An endpoint to test **Writes** of a single document.
+
+>Be advised that the Write endpoint will write a new document for each execution.
+
 ![Endpoint rendering](./images/endpoints.png)
 
 You can deploy it to a service like [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/), which includes a [Load Test feature](https://docs.microsoft.com/en-us/vsts/load-test/app-service-web-app-performance-test).
