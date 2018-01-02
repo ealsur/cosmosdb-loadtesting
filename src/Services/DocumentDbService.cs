@@ -26,7 +26,8 @@
             _collectionUri = GetCollectionLink();
             //See https://docs.microsoft.com/en-us/azure/cosmos-db/performance-tips for performance tips
             _dbClient = new DocumentClient(_settings.DatabaseUri, _settings.DatabaseKey, new ConnectionPolicy() {
-                MaxConnectionLimit = 1000,
+                ConnectionMode = ConnectionMode.Direct,
+                ConnectionProtocol = Protocol.Tcp,
                 RetryOptions = new RetryOptions()
                 {
                     // Forces errors when reaching Throughput limit to visualize in tests
